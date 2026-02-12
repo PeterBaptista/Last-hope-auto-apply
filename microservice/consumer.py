@@ -1,10 +1,15 @@
 import pika
 import json
 import time
+import os
 from .config import settings
 from .scraper import process_message
 
 def start_consumer():
+    # Set the working directory to the microservice folder
+    # This ensures SeleniumBase creates 'downloaded_files' and other artifacts here
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
     print("Connecting to RabbitMQ...")
     credentials = pika.PlainCredentials(settings.RABBITMQ_USER, settings.RABBITMQ_PASSWORD)
     parameters = pika.ConnectionParameters(
