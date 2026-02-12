@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pika
+seleniumbase
+python-dotenv
