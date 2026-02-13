@@ -1,0 +1,5 @@
+microservice/cookies/
+microservice/__pycache__/
+microservice/venv/
+*.pyc
+.DS_Store
